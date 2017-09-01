@@ -33,4 +33,4 @@ cat > fluent.conf << eof
   </server>
 </match>
 eof
-exec fluentd -c fluent.conf
+td-agent -c fluent.conf
