@@ -8,7 +8,7 @@ set -e
 set -x
 FLUENTD_TAG="${1:-default}"
 FLUENTD_LOG_PATH="${2:-/usr/local/tomcat/logs}"
-FLUENTD_MATCH="${3:-*.*}"
+FLUENTD_MATCH="${3:-**}"
 FLUENTD_HOST="${4:-10.1.1.85}"
 FLUENTD_PORT="${5:-24224}"
 
