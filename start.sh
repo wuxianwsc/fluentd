@@ -26,11 +26,11 @@ cat > fluent.conf << eof
 </source>
 <match FLUENTD_MATCH>
   @type forward
-  flush_interval 30s
+  flush_interval 10s
   <server>
     host FLUENTD_HOST
     port FLUENTD_PORT
   </server>
 </match>
 eof
-fluentd -c fluent.conf
+exec fluentd -c fluent.conf

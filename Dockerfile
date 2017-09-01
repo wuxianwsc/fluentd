@@ -31,7 +31,7 @@ RUN apk update \
 # for log storage (maybe shared with host)
 RUN mkdir -p /fluentd/log
 # configuration/plugins path (default: copied from .)
-RUN mkdir -p /fluentd/etc /fluentd/plugins
+RUN mkdir -p /fluentd/plugins
 
 COPY start.sh /fluentd/
 RUN chmod +x /fluentd/start.sh
