@@ -15,21 +15,21 @@ FLUENTD_PORT="${5:-24224}"
 cat > fluent.conf << eof
 <source>
   @type forward
-  port FLUENTD_PORT
+  port ${FLUENTD_PORT}
 </source>
 <source>
   @type tail
-  path FLUENTD_LOG_PATH/*.log
-  pos_file FLUENTD_LOG_PATH/FLUENTD_TAG.log.pos
-  tag FLUENTD_TAG
+  path ${FLUENTD_LOG_PATH}/*.log
+  pos_file ${FLUENTD_LOG_PATH}/${FLUENTD_TAG}.log.pos
+  tag ${FLUENTD_TAG}
   format none
 </source>
-<match FLUENTD_MATCH>
+<match ${FLUENTD_MATCH}>
   @type forward
   flush_interval 10s
   <server>
-    host FLUENTD_HOST
-    port FLUENTD_PORT
+    host ${FLUENTD_HOST}
+    port ${FLUENTD_PORT}
   </server>
 </match>
 eof
