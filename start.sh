@@ -33,4 +33,6 @@ cat > fluent.conf << eof
   </server>
 </match>
 eof
+touch ${FLUENTD_LOG_PATH}/${FLUENTD_TAG}.log.pos
+chmod 777 ${FLUENTD_LOG_PATH}/${FLUENTD_TAG}.log.pos
 td-agent -c fluent.conf
