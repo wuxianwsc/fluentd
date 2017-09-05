@@ -20,7 +20,7 @@ cat > fluent.conf << eof
 <source>
   @type tail
   path ${FLUENTD_LOG_PATH}/*.log
-  pos_file ${FLUENTD_LOG_PATH}/${FLUENTD_TAG}.log.pos
+  pos_file fluent.pos
   tag ${FLUENTD_TAG}
   format none
 </source>
@@ -33,6 +33,4 @@ cat > fluent.conf << eof
   </server>
 </match>
 eof
-touch ${FLUENTD_LOG_PATH}/${FLUENTD_TAG}.log.pos
-chmod 777 ${FLUENTD_LOG_PATH}/${FLUENTD_TAG}.log.pos
 td-agent -c fluent.conf
