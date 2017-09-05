@@ -20,7 +20,7 @@ cat > fluent.conf << eof
 <source>
   @type tail
   path ${FLUENTD_LOG_PATH}/*.log
-  pos_file fluent.pos
+  pos_file /tmp/fluent.pos
   tag ${FLUENTD_TAG}
   format none
 </source>
